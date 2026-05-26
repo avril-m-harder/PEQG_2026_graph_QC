@@ -1,0 +1,14 @@
+- graph: switchgrass_n20-Chr04K.gfa.gz
+  grouping: Sample
+  analyses:
+    - !Info
+    - !Hist
+      count_type: All
+    - !Growth
+      coverage: 1,2,2,2
+      quorum: 0,0.1,0.5,1
+    - !OrderedGrowth
+      count_type: Bp
+      order: ./hist_order.txt
+      coverage: 1,2,2,2
+      quorum: 0,0.1,0.5,1
