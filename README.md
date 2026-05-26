@@ -1,6 +1,6 @@
 # PEQG_2026_graph_QC
 
-This repo contains a test data set and the info needed to run basic exploration and QC steps on a collection of sequences and a corresponding chromosome-level graph file. The total size of input files is ~600 MB, which includes a ~1.2-GB index file typically produced Step 3 below. This index can be downloaded, used for Step 3, and deleted when moving to Step 4. Runtime estimates calculated on a MacBook Pro with an M2 chip and 16 GB RAM.
+This repo contains a test data set and the info needed to run basic exploration and QC steps on a collection of sequences and a corresponding chromosome-level graph file. The total size of input files is ~1.7 GB, which includes a ~1.2-GB index file typically produced in Step 3 below. This index can be downloaded, used for Step 3, and deleted when moving to Step 4. Runtime estimates calculated on a MacBook Pro with an M2 chip and 16 GB RAM.
 
 1. All programs needed can be installed in a Conda environment. The programs we'll be using are [PanKmer](https://salk-tm.gitlab.io/pankmer/) and [panacus](https://github.com/codialab/panacus). Create a new environment and install the programs + dependencies:
 
