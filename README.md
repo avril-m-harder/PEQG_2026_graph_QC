@@ -15,7 +15,7 @@ This repo contains a test data set and the info needed to run basic exploration 
 	pip install pankmer
 	```
 
-2. Download the `input_data` directory of this repo, put it wherever you'd like, and navigate to it in your terminal app. Also download the [graph GFA file](https://drive.google.com/file/d/1EJnVK4mJXdjzWpcRyuppC2NlP6b5Xw2k/view?usp=sharing) and the [PanKmer index file](https://drive.google.com/file/d/1OrXsr4iX-X_u6MVUOl2p3VdPQYHQFofb/view?usp=sharing) stored on Google Drive and add to the `input_data` directory.
+2. Download the `input_data` directory of this repo, put it wherever you'd like, and navigate to it in your terminal app. Also download the [graph GFA file](https://drive.google.com/file/d/1EJnVK4mJXdjzWpcRyuppC2NlP6b5Xw2k/view?usp=sharing) and the [PanKmer index file](https://drive.google.com/file/d/1OrXsr4iX-X_u6MVUOl2p3VdPQYHQFofb/view?usp=sharing) stored on Google Drive and add them to the `input_data` directory.
 
 3. **PanKmer**. First we'll take a look at the patterns of diversity represented in our collection of sequences. These sequences come from Chr04K of switchgrass (*Panicum virgatum*)--a polyploid species of bioenergy interest--and comprise 20 haplotypes from 10 individuals, spanning combinations of 3 subpopulations and 3 ecotypes[^1]. PanKmer is a really quick way to get a snapshot of sequence divergences across a collection of FASTA files.
 
@@ -88,7 +88,8 @@ This repo contains a test data set and the info needed to run basic exploration 
 	```
 	mkdir ../panacus_output
 	
-	panacus report panacus_report.yaml > ../panacus_output/panacus-switchgrass_n20-Chr04K.html
+	panacus report panacus_report.yaml > \
+	../panacus_output/panacus-switchgrass_n20-Chr04K.html
 	```
    
    The output will all be contained in a single HTML file (from which you can export tables for custom plotting or SVGs for figure editing). Open this file locally to explore your results. (You can also download this [example report](https://github.com/avril-m-harder/PEQG_2026_graph_QC/blob/main/expected_output/panacus-switchgrass_n20-Chr04K.html) to explore and compare your results against.)
