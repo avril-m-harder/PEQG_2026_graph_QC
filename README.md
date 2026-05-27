@@ -1,6 +1,6 @@
 # PEQG_2026_graph_QC
 
-This repo contains a test data set and the info needed to run basic exploration and QC steps on a collection of sequences and a corresponding chromosome-level graph file. The total size of input files is ~1.7 GB, which includes a ~1.2-GB index file typically produced in Step 3 below. This index can be downloaded, used for Step 3, and deleted when moving to Step 4. Runtime estimates calculated on a MacBook Pro with an M2 chip and 16 GB RAM.
+This repo contains a test data set and the info needed to run basic exploration and QC steps on a collection of sequences and a corresponding chromosome-level graph file. The total size of input files is ~1.7 GB, which includes a ~1.2-GB index file typically produced in Step 3 below. If you choose to download it, this index can be used for Step 3 and deleted when moving to Step 4. Runtime estimates calculated on a MacBook Pro with an M2 chip and 16 GB RAM.
 
 1. All programs needed can be installed in a Conda environment. The programs we'll be using are [PanKmer](https://salk-tm.gitlab.io/pankmer/) and [panacus](https://github.com/codialab/panacus). Create a new environment and install the programs + dependencies:
 
@@ -15,7 +15,10 @@ This repo contains a test data set and the info needed to run basic exploration 
 	pip install pankmer
 	```
 
-2. Download the `input_data` directory of this repo, put it wherever you'd like, and navigate to it in your terminal app. Also download the [graph GFA file](https://drive.google.com/file/d/1EJnVK4mJXdjzWpcRyuppC2NlP6b5Xw2k/view?usp=sharing) and the [PanKmer index file](https://drive.google.com/file/d/1OrXsr4iX-X_u6MVUOl2p3VdPQYHQFofb/view?usp=sharing) stored on Google Drive and add them to the `input_data` directory.
+2. Download the contents of the `input_data` directory of this repo; there are two options:
+	* [Download the version](https://drive.google.com/file/d/1rqHWkOLOUgxPzhyQ-DloDMp1cQoyRDpP/view?usp=drive_link) *without* the ~1.2 Gb PanKmer index (uncompressed size ~ 585 Mb)
+	* [Download the version](https://drive.google.com/file/d/1rqHWkOLOUgxPzhyQ-DloDMp1cQoyRDpP/view?usp=drive_link) *with* the ~1.2 Gb PanKmer index (uncompressed size ~ 1.7 Gb)
+	Put it wherever you'd like, and `cd` into it.
 
 3. **PanKmer**. First we'll take a look at the patterns of diversity represented in our collection of sequences. These sequences come from Chr04K of switchgrass (*Panicum virgatum*)--a polyploid species of bioenergy interest--and comprise 20 haplotypes from 10 individuals, spanning combinations of 3 subpopulations and 3 ecotypes[^1]. PanKmer is a really quick way to get a snapshot of sequence divergences across a collection of FASTA files.
 
