@@ -17,9 +17,9 @@ This repo contains a test data set and the info needed to run basic exploration 
 
 2. Download the contents of the `input_data` directory of this repo; there are two options:
 	* [Download the version](https://drive.google.com/file/d/1rqHWkOLOUgxPzhyQ-DloDMp1cQoyRDpP/view?usp=drive_link) *without* the ~1.2 Gb PanKmer index (uncompressed size ~ 585 Mb)
-	* [Download the version](https://drive.google.com/file/d/1rqHWkOLOUgxPzhyQ-DloDMp1cQoyRDpP/view?usp=drive_link) *with* the ~1.2 Gb PanKmer index (uncompressed size ~ 1.7 Gb)
+	* [Download the version](https://drive.google.com/file/d/1iK2in4qG6rIOi2i2AkbRCBkPdZMwCjjA/view?usp=drive_link) *with* the ~1.2 Gb PanKmer index (uncompressed size ~ 1.7 Gb)
 	
-	Put it wherever you'd like, and `cd` into it.
+	Put it wherever you'd like and `cd` into it.
 
 3. **PanKmer**. First we'll take a look at the patterns of diversity represented in our collection of sequences. These sequences come from Chr04K of switchgrass (*Panicum virgatum*)--a polyploid species of bioenergy interest--and comprise 20 haplotypes from 10 individuals, spanning combinations of 3 subpopulations and 3 ecotypes[^1]. PanKmer is a really quick way to get a snapshot of sequence divergences across a collection of FASTA files.
 
