@@ -28,7 +28,7 @@ This repo contains a test data set and the info needed to run basic exploration 
 		-o switchgrass_n20-Chr04K_index.tar
 	```
 
-   Next, we'll create an adjacency matrix from the *k*-mer index and plot Jaccard similarities as a heatmap:  
+   Next, we'll create an adjacency matrix from the *k*-mer index and plot Jaccard similarities as a heatmap (runtime ~90 seconds):  
    ```
 	pankmer adj-matrix \
 		-i switchgrass_n20-Chr04K_index.tar \
@@ -87,7 +87,7 @@ This repo contains a test data set and the info needed to run basic exploration 
    * !Growth: Calculate an exact growth curve based on those same patterns, highlighting the number of bases, edges, and nodes observed in various sequence-sharing categories as defined by the `coverage` and `quorum` specifications (*i.e.*, unique, shared by ≥ 10% of haplotypes, shared by ≥50% of haplotypes, and core)
    * !OrderedGrowth: Calculate a growth curve for the graph by analyzing haplotypes in the specified order (memory intensive, so must specify how to summarize; here, 'Bp')
 
-   Once the config file is ready, we can create an output directory and generate a report containing the requested results with a single command:
+   Once the config file is ready, we can create an output directory and generate a report containing the requested results with a single command (runtime ~3 minutes):
 	```
 	mkdir ../panacus_output
 	
@@ -104,7 +104,7 @@ This repo contains a test data set and the info needed to run basic exploration 
 	   panacus-visualize \
 		-f pdf \
 		-e \
-		../expected_output/pan-growth-switchgrass-n20-chr04k.gfa.gz--group-by-sample-growth-bp__Placeholder\ Filename__table.tsv > \
+		../panacus_output/pan-growth-switchgrass-n20-chr04k.gfa.gz--group-by-sample-growth-bp__Placeholder\ Filename__table.tsv > \
 		../panacus_output/growth_out-w_equations.pdf
 	   ```
    		The plots written by this command include growth curve equations and estimates for $\alpha$. Generally curves where $\alpha$ < 1 can be interpreted as open, whereas $\alpha$ > 1 indicates a more closed collection of sequences.
