@@ -111,6 +111,6 @@ This repo contains a test data set and the info needed to run basic exploration 
    * Pangenome Info: General graph summary information that can be used to calculate a compression index (*i.e.*, total length of a graph/total length of sequences input into a graph builder), assess haplotype-specific clipping, etc.
    * Ordered Growth: Unlike 'Pangenome Growth,' which is an exact growth curve, this plot shows how the graph grows when haplotypes are added in a specified order. Notice the extra little jumps in *y*-values when going from one subpopulation to the next.
    
-*Special thanks to [Tom Juenger](https://sites.utexas.edu/juenger-lab/) for sharing the sequence data used in this walkthrough.**
+*Special thanks to [Tom Juenger](https://sites.utexas.edu/juenger-lab/) for sharing the sequence data used in this walkthrough.*
    
 [^1]: [Lovell et al. 2021, *Nature*](https://doi.org/10.1038/s41586-020-03127-1)
