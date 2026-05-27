@@ -5,6 +5,7 @@
     - !Hist
       count_type: All
     - !Growth
+      count_type: All
       coverage: 1,2,2,2
       quorum: 0,0.1,0.5,1
     - !OrderedGrowth

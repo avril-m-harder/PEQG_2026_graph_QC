@@ -36,6 +36,8 @@ This repo contains a test data set and the info needed to run basic exploration 
 
 	pankmer clustermap \
 		--metric jaccard \
+		--width 15 \
+		--height 15 \
 		-i ../pankmer_output/switchgrass_n20-Chr04K_adj_matrix.tsv \
 		-o ../pankmer_output/switchgrass_n20-Chr04K_adj_matrix_jaccard.pdf
    	```
@@ -53,7 +55,7 @@ This repo contains a test data set and the info needed to run basic exploration 
 	
 4. **panacus**. Based on the PanKmer assessment, let's say we've gone ahead with construction of a graph with Minigraph-Cactus, with Gulf_A_HAP1 selected as the primary reference sequence, or the backbone of the graph. Typically, assessments of a graph are done on a whole-genome level, but we'll use a single chromosome GFA file as an example.
    
-   Panacus is a great program for getting a sense of the diversity represented in a graph. It requires a config file, where you can define the analyses you'd like to run. For example, the below config file will direct panacus to:
+   Panacus is a great program for getting a sense of the diversity represented in a graph. It requires a config file, where you can define the analyses you'd like to run. For example, the below config file will direct Panacus to:
    
 	<details>
 	<summary>
@@ -70,6 +72,7 @@ This repo contains a test data set and the info needed to run basic exploration 
 		- !Growth
 	      coverage: 1,2,2,2
 	      quorum: 0,0.1,0.5,1
+	  	  count_type: All
 		- !OrderedGrowth
 	  	  count_type: Bp
 	  	  order: ./hist_order.txt
@@ -80,8 +83,8 @@ This repo contains a test data set and the info needed to run basic exploration 
 	</details>
 
    * Analyze the GFA file for Chr04K, printing some basic stats (!Info) grouped by sample name (can be set to "Haplotype" to specifically analyze different haplotypes from the same sample by using [PanSN](https://github.com/pangenome/PanSN-spec) haplotype naming convention) 
-   * !Hist: Create a histogram describing the pattern of sequence sharing among haplotypes in the graph at the base level
-   * !Growth: Calculate an exact growth curve based on those same patterns, highlighting the number of nodes, edges, and bases (i.e., 'All') observed in various sequence-sharing categories as defined by the `coverage` and `quorum` specifications (i.e., unique, shared by ≥ 10% of haplotypes, shared by ≥50% of haplotypes, and core) 
+   * !Hist: Create a histogram describing patterns of shared information (i.e., bases, edges, and nodes) among haplotypes in the graph
+   * !Growth: Calculate an exact growth curve based on those same patterns, highlighting the number of bases, edges, and nodes observed in various sequence-sharing categories as defined by the `coverage` and `quorum` specifications (i.e., unique, shared by ≥ 10% of haplotypes, shared by ≥50% of haplotypes, and core)
    * !OrderedGrowth: Calculate a growth curve for the graph by analyzing haplotypes in the specified order (memory intensive, so must specify how to summarize; here, 'Bp')
 
    Once the config file is ready, we can create an output directory and generate a report containing the requested results with a single command:
@@ -93,6 +96,17 @@ This repo contains a test data set and the info needed to run basic exploration 
 	```
    
    The output will all be contained in a single HTML file (from which you can export tables for custom plotting or SVGs for figure editing). Open this file locally to explore your results. (You can also download this [example report](https://github.com/avril-m-harder/PEQG_2026_graph_QC/blob/main/expected_output/panacus-switchgrass_n20-Chr04K.html) to explore and compare your results against.)
+   
+   Some take-homes from the report:
+   * Coverage Histogram: Each plot shows roughly the same trend, which is an overrepresentation of unique sequence and very little core sequence. (It is worth comparing the base and node plots and keeping in mind that nodes can be anywhere from 1 to 1,024 bases in length.)
+   * Pangenome Growth: The relative amounts of core and unique sequences are highlighted again here. Also note that the curve does not appear to be reaching much of an asymptote. To directly estimate openness, you can download the table from the HTML report and apply  an additional (deprecated) command to it, e.g.:
+   ```
+   panacus-visualize \
+	-f pdf \
+	-e \
+	../expected_output/pan-growth-switchgrass-n20-chr04k.gfa.gz--group-by-sample-growth-bp__Placeholder\ Filename__table.tsv > \
+	../panacus_output/growth_out-w_equations.pdf
+   ```
    
    [Add interpretations of plots, how this info is useful, discuss interpretation of growth curve equation + alpha param]
    
