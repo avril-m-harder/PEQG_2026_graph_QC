@@ -107,7 +107,7 @@ This repo contains a test data set and the info needed to run basic exploration 
 		../expected_output/pan-growth-switchgrass-n20-chr04k.gfa.gz--group-by-sample-growth-bp__Placeholder\ Filename__table.tsv > \
 		../panacus_output/growth_out-w_equations.pdf
 	   ```
-   The plots written by this command include growth curve equations and estimates for $\alpha$. Generally curves where $\alpha$ < 1 can be interpreted as open, whereas $\alpha$ > 1 indicates a more closed collection of sequences.
+   		The plots written by this command include growth curve equations and estimates for $\alpha$. Generally curves where $\alpha$ < 1 can be interpreted as open, whereas $\alpha$ > 1 indicates a more closed collection of sequences.
    * Pangenome Info: General graph summary information that can be used to calculate a compression index (i.e., total length of a graph/total length of sequences input into a graph builder), assess haplotype-specific clipping, etc.
    * Ordered Growth: Unlike 'Pangenome Growth,' which is an exact growth curve, this plot shows how the graph grows with haplotypes are added in a specified order. Notice the extra little jumps in y-values when going from one subpopulation to the next.
    
