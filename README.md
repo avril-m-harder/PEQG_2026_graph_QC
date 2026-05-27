@@ -95,7 +95,7 @@ This repo contains a test data set and the info needed to run basic exploration 
 	../panacus_output/panacus-switchgrass_n20-Chr04K.html
 	```
    
-   The output will all be contained in a single HTML file (from which you can export tables for custom plotting or SVGs for figure editing). Open this file locally to explore your results. (You can also download this [example report](https://github.com/avril-m-harder/PEQG_2026_graph_QC/blob/main/expected_output/panacus-switchgrass_n20-Chr04K.html) to explore and compare your results against.)
+   The output will all be contained in a single HTML file from which you can export tables for custom plotting or SVGs for figure editing. Open this file locally to explore your results. (You can also download this [example report](https://github.com/avril-m-harder/PEQG_2026_graph_QC/blob/main/expected_output/panacus-switchgrass_n20-Chr04K.html) to explore and compare your results against.)
    
    Some take-homes from the report:
    * Coverage Histogram: Each plot shows roughly the same trend, which is an overrepresentation of unique sequence and very little core sequence. (It is worth comparing the base and node plots and keeping in mind that nodes can be anywhere from 1 to 1,024 bases in length.)
