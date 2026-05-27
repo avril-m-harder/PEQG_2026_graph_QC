@@ -83,8 +83,8 @@ This repo contains a test data set and the info needed to run basic exploration 
 	</details>
 
    * Analyze the GFA file for Chr04K, printing some basic stats (!Info) grouped by sample name (can be set to "Haplotype" to specifically analyze different haplotypes from the same sample by using [PanSN](https://github.com/pangenome/PanSN-spec) haplotype naming convention) 
-   * !Hist: Create a histogram describing patterns of shared information (i.e., bases, edges, and nodes) among haplotypes in the graph
-   * !Growth: Calculate an exact growth curve based on those same patterns, highlighting the number of bases, edges, and nodes observed in various sequence-sharing categories as defined by the `coverage` and `quorum` specifications (i.e., unique, shared by ≥ 10% of haplotypes, shared by ≥50% of haplotypes, and core)
+   * !Hist: Create a histogram describing patterns of shared information (*i.e.*, bases, edges, and nodes) among haplotypes in the graph
+   * !Growth: Calculate an exact growth curve based on those same patterns, highlighting the number of bases, edges, and nodes observed in various sequence-sharing categories as defined by the `coverage` and `quorum` specifications (*i.e.*, unique, shared by ≥ 10% of haplotypes, shared by ≥50% of haplotypes, and core)
    * !OrderedGrowth: Calculate a growth curve for the graph by analyzing haplotypes in the specified order (memory intensive, so must specify how to summarize; here, 'Bp')
 
    Once the config file is ready, we can create an output directory and generate a report containing the requested results with a single command:
@@ -99,7 +99,7 @@ This repo contains a test data set and the info needed to run basic exploration 
    
    Some take-homes from the report:
    * Coverage Histogram: Each plot shows roughly the same trend, which is an overrepresentation of unique sequence and very little core sequence. (It is worth comparing the base and node plots and keeping in mind that nodes can be anywhere from 1 to 1,024 bases in length.)
-   * Pangenome Growth: The relative amounts of core and unique sequences are highlighted again here. Also note that the curve does not appear to be reaching much of an asymptote. To directly estimate openness, you can download the table from the HTML report and apply  an additional (deprecated) command to it, e.g.:
+   * Pangenome Growth: The relative amounts of core and unique sequences are highlighted again here. Also note that the curve does not appear to be reaching much of an asymptote. To directly estimate openness, you can download the table from the HTML report and apply  an additional (deprecated) command to it, *e.g.*:
 	   ```
 	   panacus-visualize \
 		-f pdf \
@@ -108,7 +108,7 @@ This repo contains a test data set and the info needed to run basic exploration 
 		../panacus_output/growth_out-w_equations.pdf
 	   ```
    		The plots written by this command include growth curve equations and estimates for $\alpha$. Generally curves where $\alpha$ < 1 can be interpreted as open, whereas $\alpha$ > 1 indicates a more closed collection of sequences.
-   * Pangenome Info: General graph summary information that can be used to calculate a compression index (i.e., total length of a graph/total length of sequences input into a graph builder), assess haplotype-specific clipping, etc.
-   * Ordered Growth: Unlike 'Pangenome Growth,' which is an exact growth curve, this plot shows how the graph grows with haplotypes are added in a specified order. Notice the extra little jumps in y-values when going from one subpopulation to the next.
+   * Pangenome Info: General graph summary information that can be used to calculate a compression index (*i.e.*, total length of a graph/total length of sequences input into a graph builder), assess haplotype-specific clipping, etc.
+   * Ordered Growth: Unlike 'Pangenome Growth,' which is an exact growth curve, this plot shows how the graph grows when haplotypes are added in a specified order. Notice the extra little jumps in *y*-values when going from one subpopulation to the next.
    
 [^1]: [Lovell et al. 2021, *Nature*](https://doi.org/10.1038/s41586-020-03127-1)
