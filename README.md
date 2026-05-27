@@ -100,13 +100,13 @@ This repo contains a test data set and the info needed to run basic exploration 
    Some take-homes from the report:
    * Coverage Histogram: Each plot shows roughly the same trend, which is an overrepresentation of unique sequence and very little core sequence. (It is worth comparing the base and node plots and keeping in mind that nodes can be anywhere from 1 to 1,024 bases in length.)
    * Pangenome Growth: The relative amounts of core and unique sequences are highlighted again here. Also note that the curve does not appear to be reaching much of an asymptote. To directly estimate openness, you can download the table from the HTML report and apply  an additional (deprecated) command to it, e.g.:
-   ```
-   panacus-visualize \
-	-f pdf \
-	-e \
-	../expected_output/pan-growth-switchgrass-n20-chr04k.gfa.gz--group-by-sample-growth-bp__Placeholder\ Filename__table.tsv > \
-	../panacus_output/growth_out-w_equations.pdf
-   ```
+	   ```
+	   panacus-visualize \
+		-f pdf \
+		-e \
+		../expected_output/pan-growth-switchgrass-n20-chr04k.gfa.gz--group-by-sample-growth-bp__Placeholder\ Filename__table.tsv > \
+		../panacus_output/growth_out-w_equations.pdf
+	   ```
    
    [Add interpretations of plots, how this info is useful, discuss interpretation of growth curve equation + alpha param]
    
